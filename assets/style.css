@@ -54,6 +54,16 @@ section:before {
     }
 }
 
+.description {
+    text-transform: capitalize;
+    margin-left: 8px;
+}
+
+.tempIcon {
+    display: flex;
+    align-items: center;
+}
+
 .card {
     background-color: #000000d0;
     color: white;
@@ -103,4 +113,5 @@ input.search-bar {
 
 h1.temp {
     margin: 0;
+    margin-bottom: .5rem;
 }
