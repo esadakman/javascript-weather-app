@@ -1,21 +1,39 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;500;700&display=swap');
+/* 
+:root {
+    --foggy: url(./img/fog.png);
+    --rainy: url(./img/rain.png);
+
+} */
+
 
 body {
     margin: 0;
     padding: 0;
+    background-color: gray;
+    height: 100vh;
+    width: 100vw;
 
 }
 
+/* ! Background Img */
 section {
     position: relative;
     width: 100%;
-    height: 100vh;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    background: url(./img/tokyo_night.jpg);
+    background: url(./img/tokyo_night_2.jpg);
     background-size: cover;
+    background-attachment: fixed;
+    /* background-repeat: no-repeat; */
+    /* resize: both; */
+    overflow-y: scroll;
     animation: color-change 10s linear infinite;
+    flex-direction: column;
+    justify-content: flex-start;
+    /* overflow: hidden; */
 }
 
 section:before {
@@ -25,61 +43,66 @@ section:before {
     left: 0;
     width: 100%;
     height: 100%;
-    background: url(./img/rain.png);
-    opacity: 0.5;
-    /* animation: rain .2s linear infinite; */
+    background: var(--rainy, url(./img/rain.png));
+    opacity: 0.2;
+    /* animation: rain 0.2s linear infinite; */
+    animation: rain 5s linear infinite;
+    /* animation-direction: alternate-reverse; */
+    z-index: -1;
 }
 
-/* @keyframes color-change {
+@keyframes color-change {
 
-    0%,
-    100% {
+    0% {
         filter: hue-rotate(0deg)
     }
 
-    50% {
+    100% {
         filter: hue-rotate(360deg)
     }
-} */
+}
 
 @keyframes rain {
+
     0% {
         background-position: 0 0;
     }
 
-    100% {
+    /* 100% {
         background-position: 20% 100%;
-        /* animation: rain 5s linear infinite;  For drizzle */
-        /* background-position: 100% 1000%; */
+    } */
+    100% {
+        background-position: 100% 1000%;
     }
 }
 
-.description {
-    text-transform: capitalize;
-    margin-left: 8px;
-}
 
-.tempIcon {
+/* ! =========== Input Area ================= */
+
+.searcher {
+    transition: all 1s;
+    border: 2px solid red;
     display: flex;
     align-items: center;
-}
-
-.card {
-    background-color: #000000d0;
+    flex-direction: column;
+    justify-content: center;
     color: white;
-    padding: 2rem;
+    background-color: #27252545;
     border-radius: 2rem;
-    width: 40%;
-    min-width: 20rem;
-    margin: 1rem;
+    margin: 5rem 0;
+    padding: 1rem;
+    padding-top: 0;
     font-family: 'Roboto Mono', monospace;
-    z-index: 1;
+    letter-spacing: .2rem;
+    transition: all 1s;
+
 }
 
 .search {
     display: flex;
     align-items: center;
     justify-content: center;
+
 }
 
 button {
@@ -91,7 +114,8 @@ button {
     background: #7c7c7c2b;
     color: white;
     cursor: pointer;
-    transition: 0.2s ease-in-out;
+    transition: 0.3s ease-in-out;
+    margin-left: 1rem;
 }
 
 button:hover {
@@ -99,7 +123,6 @@ button:hover {
 }
 
 input.search-bar {
-    /* height: 1.5rem; */
     border: none;
     outline: none;
     padding: 0.3rem 1rem;
@@ -107,11 +130,96 @@ input.search-bar {
     background-color: #7c7c7c2b;
     color: white;
     font-family: inherit;
-    font-size: 105%;
-    width: calc(100% - 100px);
+    /* font-size: 2rem; */
+    width: 15rem;
+    height: 2rem;
+    /* margin-right: 1rem; */
+
+}
+
+
+/* ! weather cards */
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    /* gap: 2rem; */
+
+
+
+}
+
+.cities {
+    display: flex;
+    /* flex-wrap: wrap; */
+    margin: auto 0;
+    gap: 2rem;
+    justify-content: center;
+    transition: all 1s;
+    flex-basis: 0;
+}
+
+.description {
+    text-transform: capitalize;
+}
+
+.tempIcon {
+    display: flex;
+    align-items: center;
+}
+
+
+.card {
+    background-color: #272525cb;
+    font-family: 'Roboto Mono', monospace;
+    color: white;
+    padding: 2rem;
+    border-radius: 2rem;
+    width: 10rem;
+    min-width: 10rem;
+    margin: 2rem 1rem;
+    overflow: hidden;
+
+}
+
+h2 {
+    margin-top: 0;
+    margin-bottom: .5rem;
 }
 
 h1.temp {
     margin: 0;
     margin-bottom: .5rem;
 }
+
+sup {
+    font-size: .8rem;
+    background-color: orange !important;
+    padding: 0 .5rem;
+    border-radius: 2rem;
+    margin-left: .5rem;
+}
+
+@media screen and (max-width: 800px) {
+    .searcher {
+
+        width: fit-content;
+    }
+
+    input.search-bar {
+        width: fit-content;
+    }
+
+    .searchArea {
+        width: fit-content;
+
+    }
+
+}
+
+/* @media screen and (min-width: 1200px) {
+    .card {
+        margin: 0 3rem;
+    }
+} */
