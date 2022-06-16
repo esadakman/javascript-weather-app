@@ -11,6 +11,7 @@ const section = document.querySelector("section");
 const getWeather = async () => {
   if (container.innerHTML.toLowerCase().includes(input.value.toLowerCase())) {
     alert("You've already have " + input.value);
+    input.value = "";
   } else if (cities.children.length > 3) {
     alert("Limited for 4 cities.");
     input.value = "";
@@ -39,7 +40,7 @@ const addWeatherData = (data) => {
     name = name.replace("Province", "").trim();
   }
   cardDiv.className = "card";
-  // console.log(cardDiv);
+  console.log(cardDiv);
   cardDiv.innerHTML = `
     <h2 class="city">${name}<sup>${country}</sup></h2>
     <h1 class="temp">${Math.floor(temp)}°C</h1>
