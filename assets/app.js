@@ -1,5 +1,4 @@
 const input = document.querySelector("input");
-<<<<<<< HEAD
 const button = document.querySelector(".button");
 const trash = document.querySelector(".trash");
 const container = document.querySelector(".container");
