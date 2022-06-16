@@ -12,7 +12,7 @@ const getWeather = async () => {
   if (container.innerHTML.toLowerCase().includes(input.value.toLowerCase())) {
     alert("You've already have " + input.value);
     input.value = "";
-  } else if (cities.children.length > 3) {
+  } else if (container.children.length > 3) {
     alert("Limited for 4 cities.");
     input.value = "";
   } else {
