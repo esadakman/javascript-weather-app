@@ -7,44 +7,69 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather App</title>
     <link rel="stylesheet" href="./assets/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
-        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://kit.fontawesome.com/beffa0ce68.js"></script>
+    <script src="./assets/js/aes.js"></script>
+    <script src="./assets/js/Extentions.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
 </head>
 
 <body>
     <section>
+        <div class="language">
+            <!-- <i class="fa-solid fa-language"></i> -->
+            <!-- <img clas src="./assets/img/eng.png" alt="eng"> -->
+            <img src="./assets/img/tr.png" alt="tr">
+            <button></button>
 
+        </div>
         <div class="searcher">
             <div class="title">
                 <h1>WEATHER APP</h1>
             </div>
             <div class="searchArea">
                 <div class="search">
-                    <input type="text" class="search-bar" placeholder="Search" value="">
-                    <button class="button"><i class="fa-solid fa-magnifying-glass fa-beat-fade"></i></button>
+                    <form action="">
+                        <input type="text" class="search-bar" placeholder="Search" value="">
+                        <button class="button"><i class="fa-solid fa-magnifying-glass fa-beat-fade"></i></button>
+                    </form>
                     <button class="trash"><i class="fa-solid fa-trash-can fa-beat-fade"></i></button>
                 </div>
             </div>
         </div>
 
+        <div class="feedback-container">
+            <div class="feedback">
+                <p style="color: white;"></p>
+            </div>
+        </div>
+
+
         <div class="container">
 
 
             <div class="cities">
-
-
-
-
+                <!-- <div class="card">
+                    <h2 class="city">Ankara<sup>TR</sup></h2>
+                    <h1 class="temp">24°C</h1>
+                    <div class="tempIcon">
+                        <img src="https://openweathermap.org/img/wn/04d.png" alt="" class="icon">
+                        <div class="broken" clouds="">Cloudy</div>
+                    </div>
+                    <div class="humidity">Humidity: 43</div>
+                    <div class="wind">Wind: 6.17</div>
+                </div> -->
 
             </div>
+
+
         </div>
 
 
     </section>
 
-    <script src="./assets/app.js"></script>
+    <!-- <script src="./assets/app.js"></script> -->
+    <script src="./weather.js"></script>
 
 </body>
 
