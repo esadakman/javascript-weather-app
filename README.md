@@ -13,5 +13,6 @@ At the end of the this project, students will be able to;
 
 You can reach my project from [here!](https://colorful-weather.netlify.app/)
 
-![weather_app](https://user-images.githubusercontent.com/98649983/174457998-b4527e63-90d5-402f-be06-492380a2b09d.jpg)
+![weather_app](https://user-images.githubusercontent.com/98649983/174458042-c6e0073a-683d-42be-8d02-e34576e30332.jpg)
+
 
