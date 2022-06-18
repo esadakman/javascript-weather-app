@@ -28,7 +28,10 @@ language.addEventListener("click", (e) => {
   }
 });
 
-// localStorage.setItem("apiKey", EncryptStringAES("4d8fb5b93d4af21d66a2948710284366"));
+localStorage.setItem(
+  "apiKey",
+  EncryptStringAES("4d8fb5b93d4af21d66a2948710284366")
+);
 
 // ! apikey'imi önce local storage'a attım, ardından EncryptStringAES ile şifreledim. ihtiyacım oluncada DecryptStringAES ile apikeyimi çözümledim
 
