@@ -49,13 +49,13 @@ const getWeatherData = async () => {
     // ? axios sayesinde tek satırda bilgileri çevirip getirdim
     const response = await axios(url);
     const { name, main, weather, wind, sys } = response.data;
-    console.log(wind);
+    // console.log(wind);
     let iconUrl = `https://openweathermap.org/img/wn/${weather[0].icon}.png`;
 
     // * forEach => array + nodeList
     // * map, filter, reduce => array
     const cityNames = cards.querySelectorAll(".city");
-    console.log(cityNames);
+    // console.log(cityNames);
     const cityNamesArray = Array.from(cityNames);
 
     if (cityNamesArray.length > 0) {
@@ -74,7 +74,7 @@ const getWeatherData = async () => {
         // ! 4 şehirden fazla girilmemesi içim
       } else if (cards.children.length > 7) {
         msg.style.display = "flex";
-        msg.innerText = `You can only check for 4 cities`;
+        msg.innerText = `You can only check for 8 cities`;
         timer(5000);
         return;
       }
@@ -100,7 +100,12 @@ const getWeatherData = async () => {
 
     // ! ======================
   } catch (error) {
-    msg.innerText = error;
+    msg.style.display = "flex";
+    if ((error = 404)) {
+      msg.innerText = `Please search a valid city name`;
+    } else {
+      msg.innerText = error;
+    }
     timer(5000);
   }
   form.reset();
