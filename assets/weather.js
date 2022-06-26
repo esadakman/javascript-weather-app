@@ -22,9 +22,11 @@ form.addEventListener("submit", (e) => {
 language.addEventListener("click", (e) => {
   if (e.target.classList.contains("tr")) {
     langSelector = "tr";
+    document.querySelector("h1").innerHTML = "HAVA DURUMU";
     console.log(langSelector);
   } else if (e.target.classList.contains("eng")) {
     langSelector = "eng";
+    document.querySelector("h1").innerHTML = "WEATHER APP";
   }
 });
 
@@ -53,6 +55,7 @@ const getWeatherData = async () => {
     // * forEach => array + nodeList
     // * map, filter, reduce => array
     const cityNames = cards.querySelectorAll(".city");
+    console.log(cityNames);
     const cityNamesArray = Array.from(cityNames);
 
     if (cityNamesArray.length > 0) {
@@ -64,11 +67,12 @@ const getWeatherData = async () => {
         msg.style.display = "flex";
         msg.innerText = `You already know the weather for ${name}, Please search for another city`;
         // ! hata mesajının 5 saniye sonra ekrandan kaybolması için setTimeout fonk. çağırdık
+        console.log(filteredArray);
         timer(5000);
 
         return;
         // ! 4 şehirden fazla girilmemesi içim
-      } else if (cards.children.length > 3) {
+      } else if (cards.children.length > 7) {
         msg.style.display = "flex";
         msg.innerText = `You can only check for 4 cities`;
         timer(5000);
