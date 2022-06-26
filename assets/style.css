@@ -60,7 +60,7 @@ section {
     background-size: cover;
     background-attachment: fixed;
     overflow-y: scroll;
-    /* animation: color-change 10s linear infinite; */
+    animation: color-change 10s linear infinite;
     flex-direction: column;
     justify-content: flex-start;
     /* overflow: hidden; */
@@ -76,8 +76,8 @@ section:before {
     height: 100%;
     background: var(--rainy, url(./img/rain.png));
     opacity: 0.2;
-    /* animation: rain 5s linear infinite; */
-    animation: rain 3s linear infinite;
+    animation: rain 5s linear infinite;
+    /* animation: rain 3s linear infinite; */
     /* animation-direction: alternate-reverse; */
     z-index: -1;
 }
@@ -89,7 +89,8 @@ section:before {
     }
 
     100% {
-        filter: hue-rotate(360deg)
+        /* filter: hue-rotate(360deg) */
+        filter: hue-rotate(0deg)
     }
 }
 
@@ -112,7 +113,7 @@ section:before {
 
 .searcher {
     transition: all 1s;
-    border: 2px solid red;
+    border: 2px solid white;
     border-radius: 2rem;
     display: flex;
     align-items: center;
@@ -175,11 +176,14 @@ input.search-bar {
 
 .feedback {
     margin: 2rem;
+    /* padding: 2rem; */
+
     font-family: 'Roboto Mono', monospace;
-    padding: 0 2rem;
-    border: 2px solid white;
+    padding: .3rem 2rem;
+    border: 2px solid red;
     border-radius: 2rem;
     color: white;
+
     display: none;
 }
 
