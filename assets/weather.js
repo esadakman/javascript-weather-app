@@ -12,7 +12,11 @@ form.addEventListener("submit", (e) => {
   e.preventDefault();
   if (input.value === "") {
     msg.style.display = "flex";
-    msg.innerText = `Please enter a city name`;
+    if (langSelector === "en") {
+      msg.innerText = `Please enter a city name`;
+    } else if (langSelector === "tr") {
+      msg.innerText = `Lütfen bir şehir ismi giriniz`;
+    }
     timer(5000);
     return;
   }
@@ -65,7 +69,12 @@ const getWeatherData = async () => {
       // ! aynı şehirlein tekrar girilmemesi için
       if (filteredArray.length > 0) {
         msg.style.display = "flex";
-        msg.innerText = `You already know the weather for ${name}, Please search for another city`;
+        if (langSelector === "en") {
+          msg.innerText = `You already know the weather for ${name}, Please search for another city`;
+        } else {
+          msg.innerText = `${name}'in hava durumunu zaten biliyorsun. Lütfen başka bir şehri arayın `;
+        }
+
         // ! hata mesajının 5 saniye sonra ekrandan kaybolması için setTimeout fonk. çağırdık
         console.log(filteredArray);
         timer(5000);
@@ -74,7 +83,11 @@ const getWeatherData = async () => {
         // ! 4 şehirden fazla girilmemesi içim
       } else if (cards.children.length > 7) {
         msg.style.display = "flex";
-        msg.innerText = `You can only check for 8 cities`;
+        if (langSelector === "en") {
+          msg.innerText = `You can only check for 8 cities`;
+        } else {
+          msg.innerText = `Sadece 8 şehrin hava durumuna bakabilirsin`;
+        }
         timer(5000);
         return;
       }
@@ -102,7 +115,11 @@ const getWeatherData = async () => {
   } catch (error) {
     msg.style.display = "flex";
     if ((error = 404)) {
-      msg.innerText = `Please search a valid city name`;
+      if (langSelector === "en") {
+        msg.innerText = `Please search a valid city name`;
+      } else {
+        msg.innerText = `Lütfen geçerli bir şehir ismi giriniz`;
+      }
     } else {
       msg.innerText = error;
     }
