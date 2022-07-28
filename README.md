@@ -2,6 +2,10 @@
 
 ## Description
 Project aims to display current weather data of searched city around the world with fetching Weather Api data.
+ In this project, a simple Weather-App was made using the
+                  Weather Api data and axios library. User can can select the
+                  language (English or Turkish) and display current weather data
+                  of searched city around the world.
 
 ## Learning Outcomes
 
